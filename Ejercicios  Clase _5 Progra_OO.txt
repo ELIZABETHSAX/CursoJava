@@ -1,0 +1,152 @@
+package Carrito;
+
+public class ItemCarrito {
+
+	
+	//Atributos
+		private String producto;
+		private double precioUnit;
+		private int cantidad;
+		
+		//Constructor 
+		public ItemCarrito (String prod, double prec, int cant) 
+		{
+			this.producto=prod;
+			this.precioUnit=prec;
+			this.cantidad=cant;
+		}
+		public ItemCarrito()
+		{
+		}
+			
+		//Metodos Get y Set
+		public String getProducto() 
+		{
+			return this.producto;
+		}
+		public double getPrecioUnit()
+		{
+			return this.precioUnit;
+		}
+		public int getCant()
+		{
+			return this.cantidad;
+		}
+		
+		public void setProducto(String prod)
+		{
+			this.producto=prod;
+		}
+		public void setprecioUnit (double prec)
+		{
+			this.precioUnit=prec;
+		}
+		public void setcantidad (int cant)
+		{
+			this.cantidad=cant;
+		}
+		
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+package Carrito;
+
+public class Carrito {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ItemCarrito item1= new ItemCarrito ("jabon en polvo",40.9,1);
+
+		ItemCarrito item2= new ItemCarrito ("esponjas",10,3);
+
+		ItemCarrito item3= new ItemCarrito ("chocolates",100.05,2);
+		
+		System.out.println("Productos");
+		
+		System.out.println(item1.getProducto());
+		System.out.println(item2.getProducto());
+		System.out.println(item3.getProducto());
+		
+		System.out.println(" ");
+		
+		item1.setProducto("jabon en polvo");
+		item1.setprecioUnit(40.9);
+		item1.setcantidad(1);
+		
+		item2.setProducto("esponjas");
+		item2.setprecioUnit(10);
+		item2.setcantidad(3);
+		
+		item3.setProducto("chocolates");
+		item3.setprecioUnit(100);
+		item3.setcantidad(2);
+		
+		System.out.println("Producto: "+item1.getProducto());
+		System.out.println("PrecioUnit: "+item1.getPrecioUnit());
+		System.out.println("Cantidad: "+item1.getCant());
+		
+		System.out.println(" ");
+		
+		System.out.println("Producto: "+item2.getProducto());
+		System.out.println("PrecioUnit: "+item2.getPrecioUnit());
+		System.out.println("Cantidad: "+item2.getCant());
+		
+		System.out.println(" ");
+		
+		
+		System.out.println("Producto: "+item3.getProducto());
+		System.out.println("PrecioUnit: "+item3.getPrecioUnit());
+		System.out.println("Cantidad: "+item3.getCant());
+		
+	}
+}
+
+************************************************************************************************
+
+
+package Carrito;
+
+import java.util.Scanner;
+
+public class Descuento01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		float compra, descuento = 0, totalfinal=0;
+		
+		Scanner cp = new Scanner(System.in);
+		
+		System.out.println("Ingrese el valor de su compra: ");
+		compra= cp.nextFloat();
+		
+		if (compra <1000)
+		{
+			descuento=(float) (compra*.10);
+		}
+		else if (compra >=1000 && compra <4000)
+		{
+			descuento=(float) (compra*.15);
+		}else if (compra >=4000 && compra <=10000)
+		{
+			descuento=(float) (compra*.25);
+		}else 
+		{
+			System.out.println("No hay descuento");
+		}
+		totalfinal=compra-descuento;
+		System.out.println("Importe de la compra: " + compra);
+		System.out.println("El descuento es de: " + descuento );
+		System.out.println("Total final a pagar es de: " + totalfinal);
+		
+		{
+			
+		}
+	}
+	}
+
+****************************************************************************************
