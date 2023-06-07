@@ -1,0 +1,96 @@
+package Pruebasunitarias;
+
+public class Calculadora {
+	
+	private int resultado;
+	
+	public Calculadora () {
+		resultado=0;
+	}
+	
+	
+	public int sumar(int a, int b)
+	{
+		resultado =a+b;
+		return resultado;
+	}
+	public int dividir(int n) {
+		resultado /=n;
+		return resultado;
+	}
+	
+	
+	
+	public int multiplicar(int a, int b) {
+	resultado =a*b;
+	return resultado;
+	}
+	
+	
+	
+	public int restar(int a, int b)
+	{
+		resultado =a-b;
+		return resultado;
+	
+}
+	public int sumando(int a, int b)
+	{
+		resultado =a+b;
+		return resultado;
+	}
+	
+}
+
+------------------------------------------------------------
+
+package testeo;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import Pruebasunitarias.Calculadora;
+
+
+class CalculadoraTest {
+
+	Calculadora cal;
+	@Test
+	public void testSuma() {
+		System.out.println("TestSuma");
+		cal=new Calculadora();
+		int resultado=cal.sumar(150,180);
+		int esperado=330;
+		Assertions.assertEquals (esperado,resultado);
+
+	}
+
+	@Test
+	public void testResta() {
+		System.out.println("TestResta");
+		cal=new Calculadora();
+		int resultado=cal.restar(90,50);
+		int esperado=40;
+		Assertions.assertEquals (esperado,resultado);
+	
+	}
+	@Test
+	public void testMultiplicar() {
+		System.out.println("TestMultiplicar");
+		cal=new Calculadora();
+		int resultado=cal.multiplicar(80,3);
+		int esperado=240;
+		Assertions.assertEquals (esperado,resultado);
+
+	}
+	@Test
+	public void testSumar() {
+		System.out.println("TestSumando");
+		cal=new Calculadora();
+		int resultado=cal.sumando(70,40);
+		int esperado=110;
+		Assertions.assertEquals (esperado,resultado);
+
+	}
+	
+	
+}
